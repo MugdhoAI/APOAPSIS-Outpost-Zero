@@ -117,3 +117,17 @@ Append the first implementation milestone only after inspecting and modifying th
   `video/exports/apoapsis_outpost_zero_30s.mp4`, replacing the silent export under the same name
   (the silent version stays in Git history). The connector used by Muse cannot push binary
   files, so this one commit happens from the laptop after a `git pull`.
+
+## 2026-11-14 00:02 Asia/Dhaka — Voiceover v2: warmer voice, captions matched to the audio
+
+- The team lead found the first voice too blunt and robotic, and the original burned in captions
+  described the scenes instead of matching the spoken words. Both are fixed in v2.
+- The narration was regenerated with a warmer, casual text to speech voice. Its natural pace is
+  slower, so long pauses inside the sentences were tightened and a mild pitch preserving time
+  stretch (atempo 1.10) was applied to fit the same 0.4 to 22.0 s window.
+- The old caption strip was covered with a black bar in the original caption style, and new
+  captions show exactly the spoken words. Their timings come from a word level recognition pass
+  over the finished audio, not from estimates.
+- Verified: 25.2 s, loudness -14.7 LUFS, true peak -1.3 dB, end card silent and caption free, and
+  frames checked at five timestamps show the caption on screen matching the words being spoken.
+- The team lead pushes this file himself as `video/exports/apoapsis_outpost_zero_30s.mp4`.
