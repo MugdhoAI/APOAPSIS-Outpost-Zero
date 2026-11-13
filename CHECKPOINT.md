@@ -25,6 +25,9 @@
 - Project README, MIT licence, `app/README.md`, Netlify config, and a GitHub Pages workflow.
 - 30 second video exported at `video/exports/apoapsis_outpost_zero_30s.mp4` (25.2 s, 1280x720,
   H.264, burned in captions). Captured from the real production build with a scripted playthrough.
+  A narrated version (AI text to speech reading of `video/script.md`, disclosed in
+  `AI_TOOLS_LOG.md`) was mixed in on 2026-11-13 without changing the visuals; once the team lead
+  commits it under the same file name, it is the submission video.
 - Video production notes, caption script, and asset attribution in `video/`.
 - A short classroom section in `README.md` with a lesson sequence and two discussion questions
   built from the real action and event values.

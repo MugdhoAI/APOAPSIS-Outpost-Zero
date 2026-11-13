@@ -100,3 +100,20 @@ Append the first implementation milestone only after inspecting and modifying th
 - Still outstanding: public deployment (hosting decision and, for GitHub Pages, the user's
   explicit approval to make the repository public), the Dhaka video upload after the missed
   Friday checkpoint, and the NASA Project form, which opens 2026-11-14 09:00 local.
+
+## 2026-11-13 23:47 Asia/Dhaka — Voiceover added to the 30 second video
+
+- The exported video had captions but a silent audio track. At the team lead's request, Muse
+  generated the voiceover from the team's own script in `video/script.md`, word for word, with an
+  AI text to speech voice, and disclosed it in `AI_TOOLS_LOG.md`.
+- The five sentences were timed to the video following the script's timing notes: voice starts at
+  0.4 s, the food store line lands while the cycle 5 report is on screen, a pause covers the
+  itemised table, and the voice ends at 22.0 s so the end card stays silent.
+- The narration was mixed in without touching the picture (video stream copied, not re-encoded).
+  Final file measures 25.2 s, loudness -14.6 LUFS, true peak -1.4 dB. A speech recognition pass
+  over the finished audio recovered the full script in the right order as an intelligibility
+  check, and the end card segment measures as silence.
+- The voiced file is delivered to the team lead to commit from the laptop as
+  `video/exports/apoapsis_outpost_zero_30s.mp4`, replacing the silent export under the same name
+  (the silent version stays in Git history). The connector used by Muse cannot push binary
+  files, so this one commit happens from the laptop after a `git pull`.
