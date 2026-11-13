@@ -139,5 +139,6 @@ lose progress. The save is deleted when a mission ends or the player returns to 
 Team APOAPSIS, three participants, Dhaka Local Event (fully online), 13 and 14 November 2026.
 Source is released under the MIT licence; see `LICENSE`.
 
-Project documents: `GAMEPLAY_SPEC.md` (the full game model) and `AI_TOOLS_LOG.md`
-(which AI tools did what, and what the team reviewed).
+Project documents: `GAMEPLAY_SPEC.md` (the full game model), `ARCHITECTURE.md`
+(how the code is organised), and `AI_TOOLS_LOG.md` (which AI tools did what, and
+what the team reviewed).
