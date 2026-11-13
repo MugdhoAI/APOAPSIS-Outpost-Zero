@@ -1,9 +1,9 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-13 23:00 Asia/Dhaka
+- Updated at: 2026-11-13 23:30 Asia/Dhaka
 - Stage: implementation complete, video exported, deployment and submission pending
 - Branch: master
-- Commit: e8f8591 (first commit, before the video, docs, and final polish; the next commit covers them)
+- Commit: 6765af6 (game, video, documentation, and the source link check are committed)
 - Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
   deployed and not yet uploaded.
 
@@ -25,8 +25,8 @@
 
 ## In progress
 
-- Nothing in flight. The working tree has the video, documentation, and small polish changes
-  waiting for the second commit.
+- Team review. The agent finished the local build; the team still has to read the code, replay a
+  mission, and confirm the copy before anything is submitted.
 
 ## Not started
 
@@ -53,11 +53,21 @@
   Result: pass. `tsc --noEmit` clean, bundle 280 kB JS and 24 kB CSS.
 - Command: opened `http://localhost:4173/` (vite preview of `dist/`) in Chrome
   Result: pass. Title screen renders, favicon present, no console errors, no horizontal overflow.
+- Command: served `app/dist` from a subfolder (`video/tools/subpath-check.mjs`) and loaded
+  `http://localhost:4180/outpost-zero/`
+  Result: pass. Relative assets resolve, a cycle resolves, the save is written. This is the GitHub
+  Pages project site case.
 - Command: scripted playthrough through Chrome DevTools (`video/tools/capture.mjs`)
   Result: pass. Balanced path reaches "Mission secured", 66 / 100, final values 28 PU, 40 WU,
   53 OU, 51 FU, 52 RPI, 95 CCI.
+- Command: failure path in the browser, greenhouse every cycle
+  Result: pass. Report ends the mission at cycle 5 with the empty power reserve reason, and the
+  debrief reads "Mission failed" with three unmet objectives.
 - Command: `ffprobe` on `video/exports/apoapsis_outpost_zero_30s.mp4`
   Result: pass. 25.2 s, 1280x720, 30 fps, H.264 plus AAC, 1.3 MB.
+- Command: HTTP check of all eight cited source URLs
+  Result: pass. All returned 200 on 13 November 2026. `nasa.gov` rate limited two requests on a
+  parallel check and returned 200 when retried.
 - Deployment: not run. No URL exists yet, so nothing about hosting is claimed.
 
 ## Known issues and blockers
@@ -69,8 +79,9 @@
   official requirement either way.
 - Video has no narration; captions carry the story. `video/script.md` has a 72 word voiceover if a
   teammate wants to record one.
-- `core2.gsfc.nasa.gov` does not resolve from this machine, so the LOLA preview imagery was not
-  used. The game links the product page and cites Mazarico et al. 2011 instead.
+- `core2.gsfc.nasa.gov` does not resolve from this machine, so the LOLA preview imagery could not be
+  downloaded. The game links the product page, cites Mazarico et al. 2011, and uses a drawing that is
+  labelled as an illustration. A NASA raster remains an optional enhancement.
 
 ## Important files changed
 

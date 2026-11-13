@@ -13,31 +13,32 @@ Use this as a lightweight work board. Put actual names next to owners before spl
 | Verify NASA team has all intended members | Team lead | Not verified | Member list screenshot or page check |
 | Verify Dhaka local portal registration and virtual channel | Team lead | Urgent | Portal confirmation / Local Lead response |
 | Ask Local Lead about missed Friday 6:30 PM video-folder checkpoint, if missed | Team lead | Urgent | Written response and correct upload link |
-| Inspect repo and initialize Git | Codex A + team lead | Not started | `git status`, first commit |
-| Scaffold the application | Codex A | Not started | App runs locally |
-| Implement five-cycle game engine | Codex A | Not started | Deterministic engine tests |
-| Implement main dashboard and decision UI | Codex B | Not started | UI connected to engine contract |
-| Integrate LOLA data context and source cards | Research teammate + Codex | Not started | In-app source panel and attribution |
-| Finish a full playable run | Whole team | Not started | Recorded end-to-end test |
-| Deploy public demo | Team lead + Codex | Not started | Public HTTPS URL opens in private window |
-| Record and export 30-second video | Video owner + teammate | Not started | Final video watched and duration checked |
+| Inspect repo and initialize Git | Codex A + team lead | Done 13 Nov | First commit `e8f8591` on `master` |
+| Scaffold the application | Codex A | Done | `app/` runs with `npm run dev` |
+| Implement five-cycle game engine | Codex A | Done | 24 engine tests pass, spec totals asserted |
+| Implement main dashboard and decision UI | Codex B | Done by Codex A | All screens verified in Chrome |
+| Integrate LOLA data context and source cards | Research teammate + Codex | Done (schematic fallback) | Source screen, briefing citation, labelled notes |
+| Finish a full playable run | Whole team | Done by agent, team replay pending | Recorded run in the video, balanced path tested |
+| Deploy public demo | Team lead + Codex | Not started, needs team account | Public HTTPS URL opens in private window |
+| Record and export 30-second video | Video owner + teammate | Done locally 13 Nov | `video/exports/apoapsis_outpost_zero_30s.mp4`, 25.2 s |
 | Complete NASA Project page | Team lead | Not started | Submitted status / confirmation |
 
 ## Priority 1 — Quality improvements
 
-- Improve the mission briefing so the goal is understandable within 20 seconds.
-- Add an accessible mission history and debrief.
-- Add one carefully selected visual asset from NASA's lunar polar illumination product.
-- Test 360 px, 768 px, and 1280 px widths.
-- Test keyboard-only navigation and visible focus.
-- Add a simple source and model notes panel.
+- [x] Improve the mission briefing so the goal is understandable within 20 seconds.
+- [x] Add an accessible mission history and debrief.
+- [x] Cover the polar illumination context in the briefing. The NASA preview imagery is served from
+  `core2.gsfc.nasa.gov`, which does not resolve from the build machine, so the game uses a labelled
+  drawing plus the cited product page. See `DECISIONS.md`.
+- [x] Test 375 px, 800 px, 1280 px, and 1920 px widths.
+- [x] Test keyboard-only navigation and visible focus.
+- [x] Add a science sources screen with a claim and a limitation for each source.
 
 ## Priority 2 — Only if the MVP is complete
 
-- Optional second scenario or difficulty mode.
-- Optional sound, subtle transitions, or advanced animation.
-- Optional localStorage save and resume.
-- Optional extra charts or data exploration.
+- [x] Save and resume an unfinished mission in this browser.
+- [ ] Optional second scenario or difficulty mode. Not planned; one strong scenario was the decision.
+- [ ] Optional sound, subtle transitions, or advanced animation. Not planned.
 
 Do not work on Priority 2 while any Priority 0 task is unfinished.
 
