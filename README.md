@@ -137,6 +137,8 @@ lose progress. The save is deleted when a mission ends or the player returns to 
 ## Team and licence
 
 Team APOAPSIS, three participants, Dhaka Local Event (fully online), 13 and 14 November 2026.
+The team on GitHub: [All Asmaul Husnain](https://github.com/MugdhoAI) and
+[Md. Tushar Ahmed](https://github.com/121tushar121-web).
 Source is released under the MIT licence; see `LICENSE`.
 
 Project documents: `GAMEPLAY_SPEC.md` (the full game model), `ARCHITECTURE.md`
