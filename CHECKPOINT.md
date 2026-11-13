@@ -1,94 +1,108 @@
-# APOAPSIS Current Checkpoint
+# Current Checkpoint
 
-- Updated at: 2026-11-13 21:26 Asia/Dhaka
-- Stage: kickoff / repository setup / implementation not yet inspected
-- Event: Dhaka Local Event, fully online, 13–14 November 2026
-- Team: APOAPSIS
-- Challenge: Build a Junior Astronaut Mission Trainer
-- Product concept: Outpost Zero
-- Branch: not yet verified
-- Commit: not yet verified
-- Current status: planning documents prepared; no application source repository was supplied in this chat workspace, so source code, build, and deployment status are not verified.
+- Updated at: 2026-11-13 23:00 Asia/Dhaka
+- Stage: implementation complete, video exported, deployment and submission pending
+- Branch: master
+- Commit: e8f8591 (first commit, before the video, docs, and final polish; the next commit covers them)
+- Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
+  deployed and not yet uploaded.
 
-## Confirmed from the participant dashboard screenshot
+## Completed
 
-- Registered event shown: 2026 NASA Space Apps Challenge.
-- Team shown: Team APOAPSIS.
-- Local Event shown: Dhaka.
-- Selected challenge shown: Build a Junior Astronaut Mission Trainer.
-- Registration date shown: October 17, 2026.
+- React + TypeScript + Vite application in `app/`, built from `GAMEPLAY_SPEC.md`.
+- Pure simulation engine with 32 passing tests (24 engine, 8 persistence).
+- Full interface: title, briefing, dashboard, consequence report, debrief, sources.
+- Deterministic events in cycle 2 and cycle 4; secured, warning, and failed outcomes.
+- NASA source registry (`app/src/data/sources.ts`) with a claim and a limitation per source; every
+  in game science note shows a NASA fact, data derived, or game assumption label.
+- `localStorage` resume for an unfinished mission, validated on load and cleared at mission end.
+- Responsive layout checked at 375, 800, 1280, and 1920 px; keyboard activation and visible focus
+  verified; production build opened and inspected.
+- Project README, MIT licence, `app/README.md`, Netlify config, and a GitHub Pages workflow.
+- 30 second video exported at `video/exports/apoapsis_outpost_zero_30s.mp4` (25.2 s, 1280x720,
+  H.264, burned in captions). Captured from the real production build with a scripted playthrough.
+- Video production notes, caption script, and asset attribution in `video/`.
 
-The screenshot does not show the complete team member list or prove that any separate Dhaka local event registration form has been completed.
+## In progress
 
-## Event timing that matters now
+- Nothing in flight. The working tree has the video, documentation, and small polish changes
+  waiting for the second commit.
 
-- Dhaka event: Friday 13 November and Saturday 14 November 2026; the Dhaka Local Event page describes it as fully online.
-- Friday 13 November 6:30 PM: local video-folder checkpoint in the schedule provided by the team. This has passed as of this checkpoint. Verify whether APOAPSIS uploaded the 30-second video. If not, contact the Dhaka Local Lead immediately to ask whether late upload is accepted and confirm the destination.
-- Saturday 14 November 9:00 AM: 30-second video upload through the NASA Project page per the team's Dhaka schedule; the global Project form opens at this time.
-- Sunday 15 November 11:59 PM local time: global NASA Project submission deadline.
-- Four-minute “240 Seconds of Glory”: not an APOAPSIS deliverable under the team's explicit understanding for virtual participants. Reconfirm only if the Local Lead sends a new instruction for virtual teams.
+## Not started
 
-## Local folder reported by the user
+- Public deployment. No hosting credentials are available to this agent.
+- Upload of the video to the Dhaka folder or the NASA Project page.
+- Final NASA Project form fields, teammate confirmation, and submission proof.
+- Optional: a downsampled LOLA raster derivative as a real map visual instead of the drawn schematic.
 
-- The user reports extracting the control ZIP to `C:\NasaProject\APOAPSIS_project_control_bundle`. This local Windows folder cannot be inspected from this assistant workspace.
-- The bundle contains documentation and instructions only; it does not include application source code or a working `package.json`. Codex should scaffold the Vite app in the `app/` subfolder.
+## Current architecture and important interfaces
 
-## Completed in the planning workspace
-
-- [x] Existing `AGENTS.md` reviewed and updated to reference control documents and current event status.
-- [x] `ARCHITECTURE.md` created.
-- [x] `DESIGN_SYSTEM.md` created.
-- [x] `SECURITY.md` created.
-- [x] Existing `engineering_skill.md` updated to use the current event context and new control documents.
-- [x] `README_START_HERE.md` created with repository placement instructions and the first Codex prompt.
-- [x] `APOAPSIS_project_control_bundle.zip` packaged for transfer.
-- [x] Existing 30-second video plan reviewed.
-- [x] Official challenge page and Dhaka local event details checked through accessible NASA / local event pages.
-
-## Not yet verified
-
-- [ ] All three teammates appear in the official NASA team member list.
-- [ ] Separate Dhaka local team registration, if required by the local event portal, is complete.
-- [ ] The correct virtual event communication link / announcement channel is available to all members.
-- [ ] The local 6:30 PM video-folder upload is complete or late-upload permission was obtained.
-- [ ] The actual application repository, current Git branch, and working tree have been inspected.
-- [ ] Node.js, npm, Git, and Codex CLI are available on the primary machine.
-- [ ] Teammate laptop can clone the same authorized repository.
-- [ ] No application build, test, or deployment has yet been verified from the files available in this workspace.
-
-## New implementation specifications
-
-- `GAMEPLAY_SPEC.md` defines the exact five-cycle game, starting resources, action costs, deterministic events, win/failure logic, and a balanced example path.
-- `NASA_DATA_PLAN.md` defines practical use of the LRO LOLA south polar illumination product and supporting NASA science sources.
-- `CODEX_LAUNCH_PROMPT.md` is the single startup prompt for Codex CLI.
-- `TEAM_TASK_BOARD.md`, `AI_TOOLS_LOG.md`, and `SUBMISSION_DRAFT.md` cover responsibilities and final delivery.
-
-## Architecture summary
-
-- Preferred MVP: static React + TypeScript + Vite browser game.
-- Pure TypeScript simulation engine separated from React UI.
-- No backend, database, accounts, or live APIs in the MVP.
-- In-memory state by default; versioned localStorage only if useful.
-- Public HTTPS static hosting.
+- `app/src/game/types.ts`: `GameState`, `CycleReport`, `GameEvent`, `ActionId`, `ResourceKey`.
+- `app/src/game/engine.ts`: `createInitialState`, `resolveCycle`, `getActionAvailability`,
+  `getResourceWarnings`, `evaluateMission`, `findKeyTradeOff`, `diffResources`.
+- `resolveCycle` is pure: it returns `{ ok: true, state, report }` or `{ ok: false, reason }` and
+  never mutates its input. Turn order: action, power balance, upkeep, event, end check.
+- `app/src/storage/persist.ts`: versioned save under `outpost-zero:save:v1`, discarded if invalid.
+- Vite uses `base: "./"`, so the same `dist/` works on GitHub Pages, Netlify, or a subfolder.
 
 ## Verification
 
-- Dashboard screenshot visually inspected: Team APOAPSIS, Local Event Dhaka, selected challenge visible.
-- Existing planning files inspected.
-- Official pages searched; some NASA pages returned server errors when opened directly. Search-index content and the Dhaka local event portal were used where available.
-- Application commands: not run; project source repository not available in this workspace.
+- Command: `cd app && npm.cmd run test`
+  Result: pass. 32 tests, 2 files.
+- Command: `cd app && npm.cmd run build`
+  Result: pass. `tsc --noEmit` clean, bundle 280 kB JS and 24 kB CSS.
+- Command: opened `http://localhost:4173/` (vite preview of `dist/`) in Chrome
+  Result: pass. Title screen renders, favicon present, no console errors, no horizontal overflow.
+- Command: scripted playthrough through Chrome DevTools (`video/tools/capture.mjs`)
+  Result: pass. Balanced path reaches "Mission secured", 66 / 100, final values 28 PU, 40 WU,
+  53 OU, 51 FU, 52 RPI, 95 CCI.
+- Command: `ffprobe` on `video/exports/apoapsis_outpost_zero_30s.mp4`
+  Result: pass. 25.2 s, 1280x720, 30 fps, H.264 plus AAC, 1.3 MB.
+- Deployment: not run. No URL exists yet, so nothing about hosting is claimed.
+
+## Known issues and blockers
+
+- Deployment needs a GitHub or Netlify account the team controls. Steps are in `app/README.md`.
+- The Dhaka local video folder link is still unknown to this agent; the team must confirm it.
+- The video is 720p, not 1080p. The app layout is 1200 px wide, so a 1080p canvas would only add
+  empty margin; 720p keeps the interface text larger. This is a deliberate choice, not an
+  official requirement either way.
+- Video has no narration; captions carry the story. `video/script.md` has a 72 word voiceover if a
+  teammate wants to record one.
+- `core2.gsfc.nasa.gov` does not resolve from this machine, so the LOLA preview imagery was not
+  used. The game links the product page and cites Mazarico et al. 2011 instead.
+
+## Important files changed
+
+- `app/src/**` (application), `app/README.md`, `app/index.html` (favicon, social meta)
+- `README.md`, `LICENSE`, `.gitignore`, `netlify.toml`, `.github/workflows/deploy-pages.yml`
+- `video/README.md`, `video/script.md`, `video/assets/attribution.md`, `video/tools/*`
+- `video/exports/apoapsis_outpost_zero_30s.mp4`
+
+## How to run on a new laptop
+
+1. Install Git and Node.js 22 or newer.
+2. Clone the repository and open the root folder.
+3. `cd app`
+4. `npm ci`
+5. `npm.cmd run dev` (Windows PowerShell blocks `npm.ps1`) or `npm run dev` elsewhere.
+6. `npm.cmd run test` and `npm.cmd run build` before making a claim about the build.
+7. Read `AGENTS.md`, `HANDOFF_TO_NEXT_AGENT.md`, and this file before changing anything.
 
 ## Exact next actions
 
-1. Open PowerShell and run `Set-Location 'C:\NasaProject\APOAPSIS_project_control_bundle'`, then start `codex`.
-2. Paste the complete instruction from `CODEX_LAUNCH_PROMPT.md`. It is written for this folder and tells Codex to create the Vite application in `app/` without overwriting the control files.
-3. Verify all three teammates appear on the NASA team page. Check the separate Dhaka portal registration immediately; the portal currently advertises a November 13 registration close. If uncertain, email the Dhaka Local Lead.
-4. If the Friday 6:30 PM local video-folder upload was missed, ask the Local Lead now whether a late 30-second upload is accepted and request the exact folder/link.
-5. Implement the playable game using `GAMEPLAY_SPEC.md`; integrate the LOLA source context from `NASA_DATA_PLAN.md`. Do not spend the first coding session on polish, audio, 3D, or a backend.
-6. By the Saturday 9:00 AM NASA Project opening, target a playable build and the required 30-second demo video for upload. The global final submission deadline remains Sunday 15 November at 11:59 PM local time.
-7. At each major milestone and before Codex quota becomes low, update this checkpoint and `WORK_LOG.md`, commit, and push to an authorized remote or create a portable handoff.
-8. Complete `AI_TOOLS_LOG.md` and `SUBMISSION_DRAFT.md` using only verified features, sources, tools, and URLs. Save proof of the final NASA Project submission.
+1. Create the public repository, push `master`, and enable Pages with source "GitHub Actions".
+2. Open the published URL in a private window, play one cycle, and record the URL and timestamp.
+3. Upload the video to the Dhaka folder named by the Local Lead, then to the NASA Project page.
+4. Fill `SUBMISSION_DRAFT.md` into the Project form using only verified links, then save the
+   confirmation screenshot.
+5. Optional polish if time remains: LOLA raster derivative, one more playtest pass with a student.
 
 ## Continuation prompt
 
-Read `AGENTS.md`, `ARCHITECTURE.md`, `DESIGN_SYSTEM.md`, `SECURITY.md`, `engineering_skill.md`, the execution plan, the 30-second video plan, and this `CHECKPOINT.md`. Inspect the actual repository, branch, Git status, and current files before editing. The Dhaka event has already started, so challenge implementation is allowed under the current event schedule. Do not assume the source repository is blank. Implement the smallest complete playable lunar outpost MVP, following the architecture and design rules. Keep all science claims sourced and every invented gameplay value labelled as a game assumption. Run the actual project checks. Update `CHECKPOINT.md`, `WORK_LOG.md`, and `DECISIONS.md`; commit a stable milestone and push only to the authorized remote. If usage is getting low, stop new work and complete a durable checkpoint before the hard limit.
+Read `AGENTS.md`, `engineering_skill.md`, `GAMEPLAY_SPEC.md`, `HANDOFF_TO_NEXT_AGENT.md`, and this
+checkpoint. Inspect `git status`, `git log --oneline -5`, and the current branch before editing.
+The game is complete and tested; do not rebuild the architecture or rebalance the numbers without
+playtest evidence recorded in `DECISIONS.md`. The remaining work is deployment, the video upload,
+and the NASA Project form. Verify every link before putting it in the submission, and update
+`CHECKPOINT.md` and `WORK_LOG.md` when a milestone lands.

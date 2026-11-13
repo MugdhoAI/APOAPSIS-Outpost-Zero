@@ -1,23 +1,32 @@
 # APOAPSIS — AI Tools and Contribution Log
 
-The NASA Project submission should disclose AI tools truthfully when the submission form requests them. Keep this file current throughout the project. Do not invent model versions or claim a tool did work it did not do.
+The NASA Project submission should disclose AI tools truthfully when the form requests them. Keep
+this file current. Do not invent model versions or claim a tool did work it did not do.
 
-| Tool / model | Actual version or plan label | What it was used for | Human review / changes | Evidence or date |
-|---|---|---|---|---|
-| OpenAI ChatGPT | Fill in actual model shown | Challenge planning, project specifications, engineering instructions, and review | Team verifies facts and approves scope |  |
-| OpenAI Codex CLI | Fill in actual model shown | Local code implementation, tests, debugging, documentation | Team reviews changes, runs checks, and controls merges |  |
-| Google Gemini | Fill in actual model shown | Backup coding, independent review, or research only if actually used | Team verifies output and tests code |  |
-| Other AI tool | Add only if used | Exact contribution | Human review |  |
+| Tool / model | Version | What it did | Human review | Date |
+| --- | --- | --- | --- | --- |
+| OpenAI ChatGPT (web) | Version not recorded by the team | Early challenge analysis, project scoping, and the control documents in this repository | Team set the challenge, scope, and constraints; the team lead approved the documents | 13 Nov 2026 |
+| OpenAI Codex CLI | Version not recorded by the team | Planning documents and specification work in the control bundle, including `GAMEPLAY_SPEC.md` and `NASA_DATA_PLAN.md` | Team reviewed scope and event rules | 13 Nov 2026 |
+| OpenCode agent, model DeepSeek V4.1 Flash Free | `deepseek-v4.1-flash-free` through the OpenCode harness | Implemented the React/TypeScript application and simulation engine, wrote and ran the tests, added the NASA source registry, produced the video capture and encoding scripts, and wrote the README, licence, deployment configuration, and checkpoints | The team must still read the code, run the checks, verify every source link, and approve the submission text | 13 Nov 2026 |
+
+Google Gemini and any other assistant were not used for this build. No AI image, audio, music, or
+voice asset appears in the game or the video: the artwork is SVG drawn in the repository, and the
+video is a screen recording of the application with burned in captions.
 
 ## Rules
 
-- Record all AI tools that materially contributed to the final project, including image, audio, video, coding, research, or writing tools.
-- State the task each tool performed. Do not use vague language such as "AI built the project".
-- The team remains responsible for scientific accuracy, original decisions, integration, testing, and final submission.
-- Do not list tools that were merely available but never used.
-- If a generated image, narration, music cue, or video clip appears in the final project, record the tool and asset location.
-- Retain important prompts only when helpful for transparency or reproducing a material contribution. Do not put private credentials or personal data in this log.
+- Record every AI tool that materially contributed, including image, audio, video, coding, research,
+  or writing tools.
+- State the task each tool performed. Avoid vague claims such as "AI built the project".
+- The team stays responsible for accuracy, decisions, integration, testing, and submission.
+- Do not list tools that were available but unused.
+- Keep credentials and personal data out of this log.
 
-## Draft disclosure to finalize after implementation
+## Draft disclosure to finalise
 
-"We used [tools and actual model names] to assist with [specific tasks]. The team defined the learning goals and game rules, reviewed the generated code and content, verified science claims against NASA sources, tested the simulation, and made the final integration and submission decisions."
+> We used ChatGPT and Codex CLI to help plan the project and write the game specification, and an
+> OpenCode agent running DeepSeek V4.1 Flash Free to implement and test the web application and to
+> prepare the demo video from real gameplay. The team chose the challenge, the learning goal, and
+> the five cycle rules, reviewed the code and every science note, checked the NASA sources, and made
+> the final integration and submission decisions. No AI generated imagery, music, or narration is
+> used in the project.

@@ -21,6 +21,6 @@ Thumbs.db
 # Temporary QA pages
 __preview.html
 
-# Large raw video captures; keep the final export and the project files
-video/captures/
-video/edit-project/
+# Large raw video captures and installed tools; keep the scripts, docs, and final export
+video/tools/capture/
+video/tools/node_modules/

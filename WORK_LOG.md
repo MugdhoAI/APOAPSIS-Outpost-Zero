@@ -27,3 +27,42 @@ Append the first implementation milestone only after inspecting and modifying th
 - Updated `AGENTS.md`, `ARCHITECTURE.md`, `README_START_HERE.md`, and `CHECKPOINT.md` to use the extracted Windows folder as repository root and the `app/` subfolder for source code.
 - Rebuilt and integrity-checked `APOAPSIS_CODEX_READY_BUNDLE.zip`.
 - No application source code, build, test, deployment, local Dhaka portal registration, or video upload has been verified from this assistant workspace.
+
+## 2026-11-13 22:40 Asia/Dhaka — Playable game built and verified
+
+- Created the Vite application in `app/` with React 19, TypeScript, and plain CSS. Kept the control
+  documents at the repository root.
+- Implemented the pure simulation engine from `GAMEPLAY_SPEC.md`: five cycles, six actions, two
+  deterministic events, secured and failed outcomes.
+- Wrote 32 tests: 24 for the engine (including the documented balanced path totals) and 8 for save
+  and restore. All pass.
+- Built the full interface: title, briefing with site schematic and LOLA citation, dashboard,
+  consequence report with per step explanations, debrief, and a sources screen.
+- Added versioned `localStorage` resume for an unfinished mission, with validation and clearing at
+  mission end.
+- `npm run build` passes: 280 kB JS, 24 kB CSS after gzip 86 kB and 5 kB.
+- Verified in Chrome: title, briefing, a full balanced playthrough, secured debrief with the expected
+  totals, keyboard activation, resume after reload, and no console errors.
+- Checked layout at 375, 800, 1280, and 1920 px. Fixed a cramped delta chip on narrow screens.
+- Removed the temporary layout preview page used for viewport checks.
+- Initialised Git at the repository root and committed the project as `e8f8591`.
+
+## 2026-11-13 23:00 Asia/Dhaka — Video, documentation, and release preparation
+
+- Installed `puppeteer-core` and ffmpeg/ffprobe binaries under `video/tools` (system ffmpeg was not
+  available; the gyan build download was abandoned in favour of the npm packages).
+- Wrote `video/tools/capture.mjs`, which records a real playthrough of the production build through
+  the Chrome DevTools screencast, driving real mouse events and logging screen change timestamps.
+- Wrote `video/tools/encode.mjs`, which builds a timed base video from the captured frames, cuts the
+  selected shots, burns in captions, adds the end card, and reports each segment's timing.
+- Rendered the end card from `video/tools/endcard.html` and exported
+  `video/exports/apoapsis_outpost_zero_30s.mp4`: 25.2 s, 1280x720, 30 fps, H.264 with a silent AAC
+  track, burned in captions, no third party footage or music.
+- Documented the production in `video/README.md`, `video/script.md`, and
+  `video/assets/attribution.md`.
+- Added the project `README.md`, `LICENSE` (MIT), `.gitignore`, `netlify.toml`, a GitHub Pages
+  workflow, `app/README.md`, and `HANDOFF_TO_NEXT_AGENT.md`.
+- Added a favicon and social meta tags to `app/index.html`.
+- Fixed the title screen, which offered "Resume mission" while always starting a new mission. It now
+  says "Start mission"; a saved run still resumes automatically after a reload.
+- Deployment, video upload, and the NASA Project form remain unverified and are the next actions.

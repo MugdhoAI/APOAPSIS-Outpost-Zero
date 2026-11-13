@@ -62,3 +62,77 @@ This file records decisions that affect future implementation. Update it when th
 **Decision:** Treat `C:\NasaProject\APOAPSIS_project_control_bundle` as the repository root if no existing application repository is found. Keep project documents at the root and scaffold the Vite app under `app/`.
 
 **Reason:** This preserves the extracted control bundle and avoids overwriting project instructions while creating the application.
+
+## 2026-11-13 — Crew condition as a sixth resource, shown in the mission header
+
+**Decision:** Model crew condition (`crew`, in CCI) as a resource in the state, but keep the five
+required resource cards (PU, WU, OU, FU, RPI) and show crew condition in the mission summary.
+
+**Reason:** `GAMEPLAY_SPEC.md` uses crew condition in the success test and in one action cost, so it
+needs to be state, not decoration. Keeping the card grid at five matches the spec's dashboard and
+the challenge's list of systems.
+
+## 2026-11-13 — No hidden penalty for low but non empty reserves
+
+**Decision:** Low and critical reserves produce warnings and colour changes only. The mission ends
+when a reserve reaches zero or crew condition is lost, exactly as written in the spec.
+
+**Reason:** The spec says penalties apply only "if defined". Inventing extra penalties would make the
+game harder than the model the team agreed, and would be untestable against the documented path.
+
+## 2026-11-13 — Transparent stability score and a named costliest choice
+
+**Decision:** Report a score of 40 points for crew condition, 40 for the average of the four
+consumable reserves, and 20 for protection, and state that formula in the debrief. Also name the
+action that spent the most units rather than an undefined "most important trade off".
+
+**Reason:** Judging and classroom use both need an explainable number. A formula the player can read
+is honest; an unexplained score is not, and "most important" cannot be measured without inventing
+weights.
+
+## 2026-11-13 — Save only an unfinished mission, under a versioned key
+
+**Decision:** Persist state to `localStorage` under `outpost-zero:save:v1` while a mission is active.
+Clear it when the mission ends or the player returns to the title. Validate the payload on load and
+discard anything that fails.
+
+**Reason:** A judge or student who reloads mid mission should not lose the run, but keeping finished
+missions would raise privacy and storage questions for no learning benefit. Validation keeps an old
+or corrupted payload from breaking the app.
+
+## 2026-11-13 — Drawn site schematic instead of a LOLA raster
+
+**Decision:** Use an authored SVG schematic labelled "Illustrative schematic, drawn for this game",
+next to the cited LOLA product page and its facts, instead of a downsampled illumination raster.
+
+**Reason:** The LOLA previews are served from `core2.gsfc.nasa.gov`, which does not resolve from the
+build machine, and naively reusing a NASA image risks implying endorsement. `NASA_DATA_PLAN.md`
+allows this fallback as long as the context is cited and the illustration is clearly not data. A
+raster derivative remains an optional enhancement, not a requirement.
+
+## 2026-11-13 — The title screen always says "Start mission"
+
+**Decision:** Remove the "Resume mission" label. A saved run still resumes automatically when the
+page reloads, but the button text no longer changes.
+
+**Reason:** The label was driven by state captured at mount, so after returning to the title it
+claimed a saved run that had just been cleared, and clicking it started a new mission anyway. An
+honest single label is better than a resume path that does not resume.
+
+## 2026-11-13 — Video recorded from the build, 720p, captions instead of narration
+
+**Decision:** Capture the 30 second video from the local production build with a scripted Chrome
+playthrough, export at 1280x720 with burned in captions and a silent audio track, and publish a
+voiceover script rather than synthesised speech.
+
+**Reason:** The interface container is 1200 px wide, so a 1080p canvas would add margin, not detail.
+Captions keep the video usable muted, and a synthetic narrator would weaken a submission that is
+supposed to sound like three students explaining their own work. A teammate can record the scripted
+voiceover later without re-editing the cuts.
+
+## 2026-11-13 — MIT licence for the source
+
+**Decision:** Release the source under the MIT licence with the team named as the copyright holder.
+
+**Reason:** Public source is expected, and a permissive licence with no custom terms is the least
+ambiguous option for judges and for anyone reusing the classroom material.
