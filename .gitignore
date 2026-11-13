@@ -1,0 +1,26 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# Local tooling
+.vscode/
+.idea/
+*.local
+*.log
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary QA pages
+__preview.html
+
+# Large raw video captures; keep the final export and the project files
+video/captures/
+video/edit-project/
