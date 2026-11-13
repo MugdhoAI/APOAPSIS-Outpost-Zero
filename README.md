@@ -1,16 +1,30 @@
-# Outpost Zero
+<p align="center">
+  <img src="assets/outpost-zero-hero.svg?v=1" alt="Outpost Zero: keep the crew alive" width="100%">
+</p>
 
-A five cycle lunar outpost game for students, built by team **APOAPSIS** for the
-[NASA Space Apps Challenge 2026](https://www.spaceappschallenge.org/2026/) challenge
-[Build a Junior Astronaut Mission Trainer](https://www.spaceappschallenge.org/2026/challenges/junior-astronaut-mission-trainer/).
+<p align="center">
+  <a href="https://apoapsis-outpost-zero.vercel.app/"><img src="https://img.shields.io/badge/Live%20Demo-Play%20now-brightgreen" alt="Live demo"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/Tests-32%20passing-brightgreen" alt="32 tests passing">
+  <img src="https://img.shields.io/badge/NASA-Space%20Apps%202026-navy" alt="NASA Space Apps 2026">
+</p>
+
+<p align="center">
+  <strong>A five cycle survival trainer for a lunar south polar outpost.</strong><br>
+  Built by team <strong>APOAPSIS</strong> for the
+  <a href="https://www.spaceappschallenge.org/2026/">NASA Space Apps Challenge 2026</a> challenge
+  <a href="https://www.spaceappschallenge.org/2026/challenges/junior-astronaut-mission-trainer/">Build a Junior Astronaut Mission Trainer</a>.
+</p>
+
+<p align="center">
+  <a href="https://apoapsis-outpost-zero.vercel.app/"><strong>Play the live demo</strong></a> ·
+  <a href="video/exports/apoapsis_outpost_zero_30s.mp4"><strong>Watch the 30 second video</strong></a> ·
+  <a href="GAMEPLAY_SPEC.md"><strong>Gameplay spec</strong></a>
+</p>
 
 You command a fictional outpost near the lunar south pole. For five cycles you make one
 decision each cycle, and every decision spends a reserve that keeps the crew alive. The
 game shows what changed, why it changed, and which NASA reference supports the lesson.
-
-- **Demo:** not published yet. The team publishes it and records the link in `CHECKPOINT.md`.
-- **Video:** 30 second project video, produced from the real build.
-- **Status:** playable end to end, tests and production build pass.
 
 ## What the player does
 
