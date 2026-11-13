@@ -1,9 +1,9 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-13 23:36 Asia/Dhaka
+- Updated at: 2026-11-14 00:01 Asia/Dhaka
 - Stage: implementation complete, video exported, deployment and submission pending
 - Branch: master
-- Commit: 900f1b5, pushed to the private GitHub repository MugdhoAI/APOAPSIS-Outpost-Zero
+- Commit: dc69ae5, pushed to the private GitHub repository MugdhoAI/APOAPSIS-Outpost-Zero
 - Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
   deployed and not yet uploaded. A second agent independently re-ran the tests and build from a
   clean install and verified the exported MP4 from the repository bytes on 2026-11-13; see
@@ -26,8 +26,9 @@
 - 30 second video exported at `video/exports/apoapsis_outpost_zero_30s.mp4` (25.2 s, 1280x720,
   H.264, burned in captions). Captured from the real production build with a scripted playthrough.
   A narrated version (AI text to speech reading of `video/script.md`, disclosed in
-  `AI_TOOLS_LOG.md`) was mixed in on 2026-11-13 without changing the visuals; once the team lead
-  commits it under the same file name, it is the submission video.
+  `AI_TOOLS_LOG.md`, captions matched to the spoken words) was committed by the team lead under
+  the same file name on 2026-11-14 in commit dc69ae5, byte verified against the produced file.
+  It is the submission video.
 - Video production notes, caption script, and asset attribution in `video/`.
 - A short classroom section in `README.md` with a lesson sequence and two discussion questions
   built from the real action and event values.
