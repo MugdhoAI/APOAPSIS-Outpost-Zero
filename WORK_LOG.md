@@ -83,3 +83,20 @@ Append the first implementation milestone only after inspecting and modifying th
   32 RPI start and a 50 RPI threshold; 8 PU for +5 PU per cycle against a 5 or 2 PU dust penalty) and
   were checked against `content.ts` and `engine.ts`. The section is documentation only, so the
   recorded video is unaffected.
+
+## 2026-11-13 23:36 Asia/Dhaka — Repository backup and independent verification
+
+- OpenCode reached its free usage limit. The team committed the remaining work as `900f1b5` and
+  pushed `master` to the new private GitHub repository `MugdhoAI/APOAPSIS-Outpost-Zero`. Push
+  verified from the laptop: branch up to date with `origin/master`, working tree clean.
+- A second agent (Muse) took over from `APOAPSIS_LIMIT_HANDOFF.md`, pulled the repository through
+  the GitHub connection, and independently re-ran the recorded checks on a clean install:
+  `npm ci` (102 packages), `npm test` (32 of 32 pass), `npm run build` (pass; 280.41 kB JS,
+  24.24 kB CSS, matching the sizes recorded earlier).
+- Downloaded the exported MP4 from the repository and verified the actual bytes: 1,263,151 bytes,
+  25.2 s, 1280x720 at 30 fps, H.264 plus AAC. A frame at 12 s shows the cycle 5 consequence
+  report with the balanced path values (28 PU, 40 WU, 53 OU, 51 FU, 52 RPI, 95 CCI) and the
+  burned in caption, so the video matches the shipped game.
+- Still outstanding: public deployment (hosting decision and, for GitHub Pages, the user's
+  explicit approval to make the repository public), the Dhaka video upload after the missed
+  Friday checkpoint, and the NASA Project form, which opens 2026-11-14 09:00 local.

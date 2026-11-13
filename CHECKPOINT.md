@@ -1,11 +1,13 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-13 23:10 Asia/Dhaka
+- Updated at: 2026-11-13 23:36 Asia/Dhaka
 - Stage: implementation complete, video exported, deployment and submission pending
 - Branch: master
-- Commit: f4327eb, with the contrast audit and classroom notes committed on top of it
+- Commit: 900f1b5, pushed to the private GitHub repository MugdhoAI/APOAPSIS-Outpost-Zero
 - Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
-  deployed and not yet uploaded.
+  deployed and not yet uploaded. A second agent independently re-ran the tests and build from a
+  clean install and verified the exported MP4 from the repository bytes on 2026-11-13; see
+  WORK_LOG.md.
 
 ## Completed
 
@@ -113,7 +115,10 @@
 
 ## Exact next actions
 
-1. Create the public repository, push `master`, and enable Pages with source "GitHub Actions".
+1. Deploy: the private repository exists and `master` is pushed. Decide the host with the user:
+   flip the repository public and enable Pages with source "GitHub Actions" (needs the user's
+   explicit approval per AGENTS.md, after a secret scan), or deploy through Netlify using the
+   included `netlify.toml`.
 2. Open the published URL in a private window, play one cycle, and record the URL and timestamp.
 3. Upload the video to the Dhaka folder named by the Local Lead, then to the NASA Project page.
 4. Fill `SUBMISSION_DRAFT.md` into the Project form using only verified links, then save the
