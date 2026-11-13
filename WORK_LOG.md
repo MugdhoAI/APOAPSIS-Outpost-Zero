@@ -147,3 +147,19 @@ Append the first implementation milestone only after inspecting and modifying th
   returned HTTP 200, so the demo loads signed out.
 - The live demo link is now filled in `SUBMISSION_DRAFT.md`. Still open: making the repository
   public and filling its link, the video uploads, and the NASA Project form (opens 09:00).
+
+## 2026-11-14 00:18 Asia/Dhaka — Repository finished and made public
+
+- An animated hero in the project's colours (near black, teal accent, moon and outpost scene)
+  was added at `assets/outpost-zero-hero.svg`, and the README opening was rebuilt around it:
+  centred hero, badges, live demo and video links, one line summary. The body of the README
+  was already precise and was kept.
+- The About section now carries the description, the live demo as the website, and 12 topics.
+- The team lead removed nine process files (launch and handoff prompts, task board, internal
+  plans) in commit fcee4cf, leaving 19 root entries: source, licence, and the substantive
+  project documents only.
+- Release v1.0.0 was published as a pre-release on master, then the repository was made public
+  with the team lead confirming GitHub sudo mode. The public page was read back from outside
+  the account: visibility Public, hero and badges rendering, release listed.
+- `SUBMISSION_DRAFT.md` now has both the live demo and the source repository links. Only the
+  public video URL placeholder remains, plus the video uploads and the Project form.

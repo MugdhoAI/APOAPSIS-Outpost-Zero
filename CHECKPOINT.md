@@ -1,14 +1,18 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-14 00:08 Asia/Dhaka
-- Stage: implementation complete, video exported, deployed on Vercel, submission pending
+- Updated at: 2026-11-14 00:18 Asia/Dhaka
+- Stage: implementation complete, deployed on Vercel, repository public with a v1.0.0
+  pre-release, submission pending
 - Branch: master
 - Commit: dc69ae5, pushed to the private GitHub repository MugdhoAI/APOAPSIS-Outpost-Zero
 - Current status: playable end to end, tests and build pass, 30 second video exported with
   narration, and the demo is deployed and verified live at
   https://apoapsis-outpost-zero.vercel.app/ (Vercel, from commit 6aa5060, checked 2026-11-14
-  with one full cycle played on the live site). The video is not yet uploaded to the Dhaka
-  folder or the NASA Project page. A second agent independently re-ran the tests and build from
+  with one full cycle played on the live site). The repository was made public the same night:
+  release v1.0.0 (pre-release), About carries the live link, the description, and 12 topics,
+  and the team lead removed nine process files, leaving 19 root entries. The video is not yet
+  uploaded to the Dhaka folder or the NASA Project page; its public URL is the last remaining
+  placeholder in `SUBMISSION_DRAFT.md`. A second agent independently re-ran the tests and build from
   a clean install and verified the exported MP4 from the repository bytes on 2026-11-13; see
   WORK_LOG.md.
 
@@ -122,10 +126,10 @@
 
 ## Exact next actions
 
-1. Make the repository public (the team lead has approved this in principle; secret scan is
-   clean), then fill the source repository link into `SUBMISSION_DRAFT.md`. GitHub Pages stays
-   available as a mirror; note the Pages workflow triggers on `main` while this repo uses
-   `master`, so fix that one line if Pages is ever used.
+1. Done 2026-11-14: repository made public, source link filled into `SUBMISSION_DRAFT.md`,
+   release v1.0.0 published as a pre-release. GitHub Pages stays available as a mirror; note
+   the Pages workflow triggers on `main` while this repo uses `master`, so fix that one line
+   if Pages is ever used.
 2. Done 2026-11-14 00:06: live URL opened and one full cycle played on the deployed build
    (title screen, briefing, dashboard, Reinforce regolith shelter, consequence report values
    all correct); an unauthenticated request from a second machine returned HTTP 200.
