@@ -100,11 +100,11 @@ from real gameplay. The team owns the rules, the review, the source checks, and 
 - [x] The balanced path totals in the spec are asserted by tests.
 - [x] The production build succeeds (`cd app && npm run build`).
 - [x] The video is 25.2 s, MP4/H.264 1280x720, and comes from the real build.
+- [x] Every source link above returns HTTP 200 (checked 13 Nov 2026).
 - [ ] The live URL opens in a private window without sign-in.
 - [ ] The repository URL opens without an access request, if public submission is intended.
 - [ ] The video link plays without login restrictions.
 - [ ] The description matches the deployed build after the final commit.
-- [ ] Every source link above opens.
 - [ ] All three teammates appear on the submitted project page.
 - [ ] No placeholders remain.
 - [ ] Submission confirmation is saved and recorded in `CHECKPOINT.md`.
