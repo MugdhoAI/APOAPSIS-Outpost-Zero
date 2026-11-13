@@ -172,6 +172,9 @@ describe("cycle rules", () => {
   });
 
   it("keeps the particle event small when protection is at the threshold", () => {
+    // The shelter action is taken in cycle 2, the same cycle the event resolves in.
+    // This is intended: the event checks protection after the action (GAMEPLAY_SPEC.md),
+    // so the cycle 2 science note must not claim a shelter built that late is wasted.
     const shielded = playSequence(["ration", "shelter"]);
     expect(shielded.resources.shielding).toBe(52);
     expect(shielded.resources.crew).toBe(91);

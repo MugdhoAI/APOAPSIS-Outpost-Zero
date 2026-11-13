@@ -47,6 +47,11 @@ person has confirmed it.
 - Do not add a backend, accounts, analytics, or a paid API. The static build is the submission.
 - Keep the video honest: if the interface changes in a way a viewer would notice, recapture it.
 
+Accessibility status: keyboard activation, visible focus, and live region announcements were checked
+by hand, and a contrast audit of every visible text node on all five screens measured 6.02:1 or
+better. A `prefers-reduced-motion` block at the end of `app.css` removes transitions and animations.
+Do not lower a colour token without re-running that contrast check.
+
 ## The four remaining jobs, in priority order
 
 1. **Publish.** Create the repository, push `master`, enable GitHub Pages with "GitHub Actions" as

@@ -23,6 +23,28 @@ game shows what changed, why it changed, and which NASA reference supports the l
 Two scripted events interrupt the run: a solar particle event before cycle 2 and a dust
 deposit on the array before cycle 4. Both are deterministic, so a class can compare runs.
 
+## Using it with a class
+
+A run is five decisions and a debrief. The events are identical in every play, so two
+students who choose differently can compare their final numbers directly.
+
+1. Play one mission without explaining the systems first. Let the first consequence report
+   do the teaching.
+2. Ask where the spent points came from, and which system was quietly left alone.
+3. Play a second mission that repeats one action every cycle, for example the greenhouse, and
+   watch the run fail. Ask what the failure actually punished.
+4. Compare the six final values in the debrief, then open the sources screen and read one note
+   out loud.
+
+Two questions that work with the numbers on screen:
+
+- The particle event arrives before cycle 2 and takes 25 CCI from an unprotected crew, or 5
+  with protection at 50 RPI. Start shielding is 32 RPI and one shelter action adds 20. What
+  do those 12 PU buy, and what does the crew pay if the points go somewhere else?
+- Servicing the array costs 8 PU once and raises generation by 5 PU in every later cycle. The
+  dust event in cycle 4 removes 5 PU from an unserviced array and 2 from a serviced one. Do
+  the repaired panels pay for themselves, and by which cycle?
+
 ## Run it locally
 
 ```bash

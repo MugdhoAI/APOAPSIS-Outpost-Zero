@@ -27,7 +27,7 @@ export const ACTIONS: GameAction[] = [
     effects: { power: -12, shielding: 20 },
     once: false,
     tradeOff:
-      "Shielding is the one reserve you cannot rebuild during an event. The power you spent here did not help this cycle's power balance at all.",
+      "Shielding is the only reserve that softens the particle event, and the power spent here is gone from this cycle's balance.",
     science: {
       label: "Game assumption",
       text:
@@ -163,7 +163,7 @@ export const CYCLE_FOCUS: CycleFocus[] = [
     note: {
       label: "NASA fact",
       text:
-        "Space radiation exposure depends on the environment, the time spent in it, and the material around the crew. A shelter built during an event is too late, which is why this cycle checks protection before the crew does anything else.",
+        "Space radiation exposure depends on the environment, the time spent in it, and the material around the crew. The event here resolves after your action, so a shelter reinforced this cycle still counts; 50 RPI is a teaching threshold, not a safety limit.",
       sourceId: "srag",
     },
   },

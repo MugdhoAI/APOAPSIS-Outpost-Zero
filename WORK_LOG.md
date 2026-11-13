@@ -1,4 +1,4 @@
-# APOAPSIS Work Log
+﻿# APOAPSIS Work Log
 
 ## 2026-11-13 21:26 Asia/Dhaka — Project control documents prepared
 
@@ -66,3 +66,20 @@ Append the first implementation milestone only after inspecting and modifying th
 - Fixed the title screen, which offered "Resume mission" while always starting a new mission. It now
   says "Start mission"; a saved run still resumes automatically after a reload.
 - Deployment, video upload, and the NASA Project form remain unverified and are the next actions.
+
+## 2026-11-13 23:09 Asia/Dhaka — Contrast audit and teacher notes
+
+- Re-ran the contrast audit from a clean state (`localStorage.clear()`, reload, Start mission,
+  Enter outpost) on the production build at `http://localhost:4173`. Measured every visible text
+  node against its resolved background on five screens: title (18 nodes, 6.38 to 17.59), dashboard
+  (109 nodes, lowest 6.38), consequence report (65 nodes, lowest 6.38), debrief (94 nodes, lowest
+  6.3), sources (77 nodes, lowest 6.02). Every ratio clears its WCAG AA target. The only reported
+  failure was a `.sr-only` label, which is clipped to a 1x1 box and not visible; the audit now
+  skips it.
+- Confirmed no application source changed after commit `e8f8591`, so the exported video still
+  matches the code in the repository.
+- Added a "Using it with a class" section to `README.md` with a four step lesson sequence and two
+  discussion questions. Both questions use values from `constants.ts` (12 PU for +20 RPI against a
+  32 RPI start and a 50 RPI threshold; 8 PU for +5 PU per cycle against a 5 or 2 PU dust penalty) and
+  were checked against `content.ts` and `engine.ts`. The section is documentation only, so the
+  recorded video is unaffected.

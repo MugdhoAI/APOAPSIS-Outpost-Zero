@@ -1,9 +1,9 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-13 23:30 Asia/Dhaka
+- Updated at: 2026-11-13 23:10 Asia/Dhaka
 - Stage: implementation complete, video exported, deployment and submission pending
 - Branch: master
-- Commit: 6765af6 (game, video, documentation, and the source link check are committed)
+- Commit: f4327eb, with the contrast audit and classroom notes committed on top of it
 - Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
   deployed and not yet uploaded.
 
@@ -18,10 +18,14 @@
 - `localStorage` resume for an unfinished mission, validated on load and cleared at mission end.
 - Responsive layout checked at 375, 800, 1280, and 1920 px; keyboard activation and visible focus
   verified; production build opened and inspected.
+- Contrast audit of every visible text node on the title, dashboard, consequence report, debrief,
+  and sources screens. Lowest measured ratio is 6.02:1 against a 4.5:1 target.
 - Project README, MIT licence, `app/README.md`, Netlify config, and a GitHub Pages workflow.
 - 30 second video exported at `video/exports/apoapsis_outpost_zero_30s.mp4` (25.2 s, 1280x720,
   H.264, burned in captions). Captured from the real production build with a scripted playthrough.
 - Video production notes, caption script, and asset attribution in `video/`.
+- A short classroom section in `README.md` with a lesson sequence and two discussion questions
+  built from the real action and event values.
 
 ## In progress
 
@@ -68,6 +72,13 @@
 - Command: HTTP check of all eight cited source URLs
   Result: pass. All returned 200 on 13 November 2026. `nasa.gov` rate limited two requests on a
   parallel check and returned 200 when retried.
+- Command: contrast audit in Chrome against `http://localhost:4173` after `localStorage.clear()`
+  Result: pass. Title 18 text nodes 6.38 to 17.59:1, dashboard 109 nodes, consequence report 65
+  nodes, debrief 94 nodes, sources 77 nodes; the lowest ratio anywhere is 6.02:1. Each node was
+  compared with its resolved background, including translucent layers. The single reported failure
+  was a `.sr-only` label clipped to a 1x1 box, which is not visible text.
+- Command: `git diff e8f8591 HEAD -- app/src app/index.html`
+  Result: pass. Empty, so the interface the video captured is the interface in the repository.
 - Deployment: not run. No URL exists yet, so nothing about hosting is claimed.
 
 ## Known issues and blockers
