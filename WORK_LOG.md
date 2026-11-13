@@ -131,3 +131,19 @@ Append the first implementation milestone only after inspecting and modifying th
 - Verified: 25.2 s, loudness -14.7 LUFS, true peak -1.3 dB, end card silent and caption free, and
   frames checked at five timestamps show the caption on screen matching the words being spoken.
 - The team lead pushes this file himself as `video/exports/apoapsis_outpost_zero_30s.mp4`.
+
+## 2026-11-14 00:06 Asia/Dhaka — Deployed to Vercel and verified live
+
+- The team lead chose Vercel over GitHub Pages and Netlify. The project was imported from the
+  private GitHub repository with root directory `app`, the Vite preset, build command
+  `npm run build`, output `dist`, and no environment variables, on the free Hobby plan.
+- Production URL: https://apoapsis-outpost-zero.vercel.app/, deployed from master commit
+  6aa5060. The build finished in about 20 seconds.
+- Live verification on the production URL: the title screen rendered, Start mission opened the
+  briefing and then the cycle 1 dashboard with the correct starting values (Power 74, Water 62,
+  Oxygen 64, Food 58, Radiation protection 32, Crew condition 100). The action Reinforce
+  regolith shelter produced the correct consequence report (Power 74 to 59, Radiation
+  protection 32 to 52, upkeep applied). An unauthenticated request from a separate machine
+  returned HTTP 200, so the demo loads signed out.
+- The live demo link is now filled in `SUBMISSION_DRAFT.md`. Still open: making the repository
+  public and filling its link, the video uploads, and the NASA Project form (opens 09:00).

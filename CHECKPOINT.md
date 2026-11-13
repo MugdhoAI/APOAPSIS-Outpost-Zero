@@ -1,12 +1,15 @@
 # Current Checkpoint
 
-- Updated at: 2026-11-14 00:01 Asia/Dhaka
-- Stage: implementation complete, video exported, deployment and submission pending
+- Updated at: 2026-11-14 00:08 Asia/Dhaka
+- Stage: implementation complete, video exported, deployed on Vercel, submission pending
 - Branch: master
 - Commit: dc69ae5, pushed to the private GitHub repository MugdhoAI/APOAPSIS-Outpost-Zero
-- Current status: playable end to end, tests and build pass, 30 second video exported. Not yet
-  deployed and not yet uploaded. A second agent independently re-ran the tests and build from a
-  clean install and verified the exported MP4 from the repository bytes on 2026-11-13; see
+- Current status: playable end to end, tests and build pass, 30 second video exported with
+  narration, and the demo is deployed and verified live at
+  https://apoapsis-outpost-zero.vercel.app/ (Vercel, from commit 6aa5060, checked 2026-11-14
+  with one full cycle played on the live site). The video is not yet uploaded to the Dhaka
+  folder or the NASA Project page. A second agent independently re-ran the tests and build from
+  a clean install and verified the exported MP4 from the repository bytes on 2026-11-13; see
   WORK_LOG.md.
 
 ## Completed
@@ -119,11 +122,13 @@
 
 ## Exact next actions
 
-1. Deploy: the private repository exists and `master` is pushed. Decide the host with the user:
-   flip the repository public and enable Pages with source "GitHub Actions" (needs the user's
-   explicit approval per AGENTS.md, after a secret scan), or deploy through Netlify using the
-   included `netlify.toml`.
-2. Open the published URL in a private window, play one cycle, and record the URL and timestamp.
+1. Make the repository public (the team lead has approved this in principle; secret scan is
+   clean), then fill the source repository link into `SUBMISSION_DRAFT.md`. GitHub Pages stays
+   available as a mirror; note the Pages workflow triggers on `main` while this repo uses
+   `master`, so fix that one line if Pages is ever used.
+2. Done 2026-11-14 00:06: live URL opened and one full cycle played on the deployed build
+   (title screen, briefing, dashboard, Reinforce regolith shelter, consequence report values
+   all correct); an unauthenticated request from a second machine returned HTTP 200.
 3. Upload the video to the Dhaka folder named by the Local Lead, then to the NASA Project page.
 4. Fill `SUBMISSION_DRAFT.md` into the Project form using only verified links, then save the
    confirmation screenshot.

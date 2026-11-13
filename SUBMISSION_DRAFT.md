@@ -89,7 +89,7 @@ from real gameplay. The team owns the rules, the review, the source checks, and 
 
 ## Public links
 
-- Live demo: [ADD VERIFIED PUBLIC URL]
+- Live demo: https://apoapsis-outpost-zero.vercel.app/
 - Source repository: [ADD VERIFIED PUBLIC REPOSITORY]
 - 30-second video: [ADD PUBLIC VIDEO URL]
 - Additional documentation: [ADD IF REQUIRED]

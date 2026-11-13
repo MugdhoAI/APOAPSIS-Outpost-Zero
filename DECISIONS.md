@@ -136,3 +136,23 @@ voiceover later without re-editing the cuts.
 
 **Reason:** Public source is expected, and a permissive licence with no custom terms is the least
 ambiguous option for judges and for anyone reusing the classroom material.
+
+## 2026-11-14 — Host the demo on Vercel
+
+**Decision:** Deploy the demo to Vercel from the private repository (root directory `app`, free
+Hobby plan). GitHub Pages and Netlify remain prepared alternatives in the repo.
+
+**Reason:** The team lead chose Vercel, where the team already has an account and another live
+project. The demo went live and was played end to end within minutes, at
+https://apoapsis-outpost-zero.vercel.app/, without waiting on the repository visibility change.
+
+## 2026-11-14 — Narration added to the video, reversing the earlier no narration note
+
+**Decision:** The team lead reversed the earlier preference against a synthetic narrator. The
+30 second video now carries an AI text to speech reading of the team's own script in
+`video/script.md`, with captions replaced to match the spoken words, disclosed in
+`AI_TOOLS_LOG.md`.
+
+**Reason:** The exported video had a silent audio track on the night before the submission
+window, and no teammate recording was available. A teammate can still record the same script
+later and replace the narration without re-editing the cuts, as the earlier note intended.
