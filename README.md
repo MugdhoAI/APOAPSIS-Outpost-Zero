@@ -142,5 +142,5 @@ The team on GitHub: [All Asmaul Husnain](https://github.com/MugdhoAI) and
 Source is released under the MIT licence; see `LICENSE`.
 
 Project documents: `GAMEPLAY_SPEC.md` (the full game model), `ARCHITECTURE.md`
-(how the code is organised), and `AI_TOOLS_LOG.md` (which AI tools did what, and
-what the team reviewed).
+(how the code is organised), `AI_TOOLS_LOG.md` (which AI tools did what, and
+what the team reviewed), and `SECURITY.md` (the security and privacy model).
