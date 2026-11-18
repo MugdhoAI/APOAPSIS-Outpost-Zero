@@ -81,6 +81,8 @@ app/src/data/       NASA source registry with a claim and a limitation per sourc
 app/src/storage/    versioned localStorage save and restore, validated on load
 app/src/components/ screens: title, briefing, dashboard, report, debrief, sources
 app/src/styles/     design tokens and layout
+assets/             the README hero artwork
+video/              the 30 second demo: script, capture and encode tools, exports
 ```
 
 The simulation has no React imports, so the rules can be tested without a browser. Each
